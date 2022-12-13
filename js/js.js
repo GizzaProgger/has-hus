@@ -84,6 +84,10 @@ class Busket {
 			this.renderItem(item.key)
 		})
 	}
+	clear() {
+		this.items = {}
+		this.updateView()
+	}
 	firstAdd(key, { name, count, price }) {
 		this.items[key] = {
 			name,
@@ -133,7 +137,7 @@ class Busket {
 	updateView() {
 		const totalbx = document.querySelector(".total-bx")
 		if (totalbx) {
-			if (this.getAllCount <= 0) {
+			if (this.getAllCount() <= 0) {
 				totalbx.style.display = "none"
 			} else {
 				totalbx.style.display = "flex"
@@ -257,6 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			`https://wa.me/${phone}?text=${text}`,
 			'_blank' // <- This is what makes it open in a new window.
 		);
+		busket.clear()
 	})
 })
 
