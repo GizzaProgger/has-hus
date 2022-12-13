@@ -133,7 +133,7 @@ class Busket {
 	updateView() {
 		const totalbx = document.querySelector(".total-bx")
 		if (totalbx) {
-			if (Object.values(this.items).length === 0) {
+			if (this.getAllCount <= 0) {
 				totalbx.style.display = "none"
 			} else {
 				totalbx.style.display = "flex"
