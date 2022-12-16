@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=430" />
 	<meta name="MobileOptimized" content="430" />
 	<link rel="stylesheet" href="css/css.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -27,14 +28,19 @@
 							<ul class="basket-list">
 							</ul>
 							<div class="sep"></div>
-							<input type="text" placeholder="Комментарий">
+							<input type="text" placeholder="Комментарий" class="comment">
 						</div>
 						<div class="bx" style="background: none;"> 
 							<select required style="margin-bottom: 10px;">
-								<option value="Город*">Город*</option>
-								<option value="Город 1">Город 1</option>
-								<option value="Город 2">Город 2</option>
-								<option value="Город 3">Город 3</option>
+								<option data-price="200" value="Восток">Восток</option>
+								<option data-price="150" value="Махам">Махам</option>
+								<option data-price="90" value="Терезе">Терезе</option>
+								<option data-price="50" value="Первомайск">Первомайск</option>
+								<option data-price="50" value="Римгорка">Римгорка</option>
+								<option data-price="50" value="Джагга">Джагга</option>
+								<option data-price="100" value="Конзовод">Конзовод</option>
+								<option data-price="150" value="Мирный">Мирный</option>
+								<option data-price="200" value="Кисловодск">Кисловодск</option>
 							</select>
 							<input type="text" class="street" placeholder="Улица*" required>
 						</div>
@@ -48,7 +54,7 @@
 								</li>
 								<li>
 									<div class="name">Стоимость доставки</div>
-									<div class="price">189 P</div> 
+									<div class="price res3">189 P</div> 
 								</li>
 								<li>
 									<div class="name">Итого к оплате</div>

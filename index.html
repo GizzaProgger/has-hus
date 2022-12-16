@@ -10,6 +10,7 @@
 	<script>
 		localStorage.removeItem("busket")
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -48,57 +49,30 @@
 				<div class="banner"><a href=""><img src="img/ban.png" width="390" alt=""></a></div>
 				<div class="nav-spacer">
 					<ul class="nav">
-						<li><a href="#bx1" class="active">Баскеты</a></li>
-						<li><a href="#bx2">Бургеры</a></li>
-						<li><a href="#bx3">Твистеры</a></li>
-						<li><a href="#bx4">Напитки</a></li>
-						<li><a href="#bx5">Десерты</a></li>
-						<li><a href="#bx6">Мороженое</a></li>
+						<li v-for="(category, i) in categories">
+							<a
+								:href="'#bx' + i"
+								:class="{'active': i == activeCategory}"
+							>
+								{{ category.name }}
+							</a>
+						</li>
 					</ul>
 				</div>
-				<div class="items-bx" id="bx1">
-					<div class="h3">Баскеты</div>
+				<div 
+					v-for="(category, categoryIndex) in categories"
+					class="items-bx" :id="'bx' + categoryIndex"
+				>
+					<div class="h3">{{ category.name }}</div>
 					<ul class="items-list">
-						<li>
+						<li v-for="(product, productIndex) in category.items">
 							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер <br>вкусно</div>
-								<div class="t3">189 P</div>
+								<div class="t1">{{ product.name }}</div>
+								<div class="t2" v-html="product.text"></div>
+								<div class="t3">{{ product.price }} P</div>
 							</div>
 							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
+								<div class="img"><img :src="product.imgPath" alt=""></div>
 								<a href="" class="btn">ДОБАВИТЬ</a>
 								<div class="number-bx">
 	                         <span class="minus">-</span>
@@ -109,277 +83,6 @@
 						</li>
 					</ul>
 				</div>
-
-				<div class="items-bx" id="bx2">
-					<div class="h3">Бургеры</div>
-					<ul class="items-list">
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер <br>вкусно</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="items-bx" id="bx3">
-					<div class="h3">Твистеры</div>
-					<ul class="items-list">
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер <br>вкусно</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="items-bx" id="bx4">
-					<div class="h3">Напитки</div>
-					<ul class="items-list">
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер <br>вкусно</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="items-bx" id="bx5">
-					<div class="h3">Десерты</div>
-					<ul class="items-list">
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер <br>вкусно</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="items-bx" id="bx6">
-					<div class="h3">Мороженое</div>
-					<ul class="items-list">
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер <br>вкусно</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-						<li>
-							<div class="left">
-								<div class="t1">Карри бургер</div>
-								<div class="t2">Супер</div>
-								<div class="t3">189 P</div>
-							</div>
-							<div class="right">
-								<div class="img"><img src="img/1.png" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
-								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
-							</div>
-						</li>
-					</ul>
-				</div>
-
 				<div class="total-bx">
 					<div class="price">3 Товара  |  347 P</div>
 					<a href="./inner1.html" class="to-bask">Посмотреть корзину</a>
@@ -387,7 +90,6 @@
 			</div>
 		</div>
 	</div>
-
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script src="js/js.js"></script>
 </body>

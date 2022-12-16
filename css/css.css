@@ -179,11 +179,18 @@ body{
 	margin-bottom: 7px;
 }
 .items-list .t2{
+	max-width: 80%;
 	color: #6B6B6B;
+	font-size: 14px;
 	margin-bottom: 20px;
 }
 .items-list .img img{
-	width: 100px;
+	width: 115px;
+	border-radius: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	-ms-border-radius: 9px;
+	-o-border-radius: 9px;
 }
 .items-list .btn{
 	padding: 8px 6px;
