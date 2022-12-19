@@ -521,7 +521,7 @@ class Busket {
 	}
 	toString({ city, street }) {
 		const br = `%0a‎`
-		let text = `Заказ из приложения Хас-Хус: Товары ${br}`
+		let text = `Заказ из приложения Байрам: Товары ${br}`
 		text += Object.values(this.items).reduce((acc, val) => (
 			acc += `${val.name} - ${val.price * val.count} Р за ${val.count} шт.`
 		), "")
@@ -671,6 +671,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const selectEl = document.querySelector(".select")
 	if(selectEl) {
 		selectEl.addEventListener("change", () => {
+			console.log("select")
 			updateBusketTwo()
 		})
 	}
