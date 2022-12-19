@@ -523,7 +523,7 @@ class Busket {
 		const br = `%0a‎`
 		let text = `Заказ из приложения Хас-Хус: Товары ${br}`
 		text += Object.values(this.items).reduce((acc, val) => (
-			acc += `${val.name} - ${val.price * val.count} за ${val.count} шт.`
+			acc += `${val.name} - ${val.price * val.count} Р за ${val.count} шт.`
 		), "")
 		text += br
 		if (city && street) {
