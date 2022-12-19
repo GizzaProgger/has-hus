@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if(sendEl) {
 		sendEl.addEventListener("submit", e => {
 			e.preventDefault()
-			const phone = "+79991892320"
+			const phone = "+79380312109"
 			let text = busket.toString({
 				city: document.querySelector("select")?.value,
 				street: document.querySelector(".street")?.value
