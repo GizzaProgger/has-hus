@@ -416,13 +416,11 @@ noscript {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	background: #fff;
 	padding: 15px;
-	text-align: center;
-}
-
-noscript H1 {
-	margin: auto;
 }
 
 
