@@ -651,22 +651,29 @@ document.addEventListener("DOMContentLoaded", () => {
 			updateBusketTwo()
 		})
 	})
-	document.querySelector(".send").addEventListener("submit", e => {
-		e.preventDefault()
-		const phone = "+79991892320"
-		let text = busket.toString({
-			city: document.querySelector("select")?.value,
-			street: document.querySelector(".street")?.value
+	const sendEl = document.querySelector(".send")
+	if(sendEl) {
+		sendEl.addEventListener("submit", e => {
+			e.preventDefault()
+			const phone = "+79991892320"
+			let text = busket.toString({
+				city: document.querySelector("select")?.value,
+				street: document.querySelector(".street")?.value
+			})
+			window.open(
+				`https://wa.me/${phone}?text=${text}`,
+				'_blank' // <- This is what makes it open in a new window.
+			);
+			busket.clear()
 		})
-		window.open(
-			`https://wa.me/${phone}?text=${text}`,
-			'_blank' // <- This is what makes it open in a new window.
-		);
-		busket.clear()
-	})
-	document.querySelector("select").addEventListener("change", () => {
-		updateBusketTwo()
-	})
+	}
+
+	const selectEl = document.querySelector(".select")
+	if(selectEl) {
+		selectEl.addEventListener("change", () => {
+			updateBusketTwo()
+		})
+	}
 })
 
 function updateBusketTwo() {
