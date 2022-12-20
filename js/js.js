@@ -765,5 +765,5 @@ function updateBusketTwo() {
 
 function getDelyveryPrice() {
 	let deliveryPrice = document.querySelector("select")?.selectedOptions[0]?.dataset.price
-	return Number(deliveryPrice)
+	return Number(deliveryPrice) || 0
 }
