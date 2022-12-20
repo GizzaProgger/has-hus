@@ -410,6 +410,7 @@ new Vue({
 		],
 		activeCategory: 0,
 		currentProduct: null,
+		currentProductKey: null,
 		currentOption: null,
 		showModal: false,
 		showImg: null,
@@ -431,43 +432,27 @@ new Vue({
 		}
 	},
 	methods: {
-		addProduct(product) {
+		addProduct(product, key) {
 			this.currentProduct = product
+			this.currentProductKey = key
 			if(this.productHasOptions) {
 				this.showModal = true
 			}
 		},
-		sendOrder() {
-			const phone = "+79380312109"
+		addToOrder() {
+			const item = busket.get(this.currentProductKey)
 			const product = this.currentProduct
-			const br = `%0a‎`
-			let text = `Заказ из приложения Байрам: Товары ${br}`
-			let count = 1
-			let price = product.price
-			let optionText = ''
 			if(this.currentOption !==null && product?.options?.items) {
 				const option = product.options.items[this.currentOption]
 				if(option) {
-					optionText += ` (${option?.title})`
-					price = option?.price
+					item.name += ` (${option?.title})`
+					item.price = option?.price
+					busket.saveToLs()
 				}				
 			}
-			text += `${product.name}${optionText} - ${price * count} Р за ${count} шт.`
-			text += br
-			const city = document.querySelector("select")?.value
-			const street = document.querySelector(".street")?.value
-			if (city && street) {
-				text += `Доставка по адресу: Г. ${city} Ул. ${street} ${br}`
-				text += `Стоимость доставки: ${getDelyveryPrice()} Р ${br}`
-				text += `Комментарий: ${document.querySelector('.comment')?.value} ${br}`
-			}
-			let total = (price * count) + getDelyveryPrice()
-			text += "Итого: " + total + " Р"
-			window.open(
-				`https://wa.me/${phone}?text=${text}`,
-				'_blank' // <- This is what makes it open in a new window.
-			);
-		}
+			this.showModal = false
+
+		},
 	},
 	mounted() {
 		document.addEventListener('scroll', () => {
@@ -787,10 +772,11 @@ function getDelyveryPrice() {
 
 function checkDelyveryPrice(selectEl) {
 	selectEl = selectEl || document.querySelector("select")
+	if(!selectEl) { return }
 	const data = selectEl?.selectedOptions[0]?.dataset || {}
 	const fromPrice = data.fromPrice
 	const price = busket.getAllSum()
-	const mesEl = selectEl.parentElement.querySelector('.form-error')
+	const mesEl = selectEl?.parentElement.querySelector('.form-error')	
 	if(price < fromPrice) {
 		mesEl.innerHTML = `Доставка в данный населенный пункт от: ${fromPrice} рублей`
 		mesEl.style.display = 'block'

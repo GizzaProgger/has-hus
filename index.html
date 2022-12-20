@@ -105,7 +105,7 @@
 							</div>
 							<div class="right">
 								<div class="img"><img :src="product.imgPath" @click="showImg = product" alt=""></div>
-								<a href="" class="btn" @click="addProduct(product)">ДОБАВИТЬ</a>
+								<a href="" class="btn" @click="addProduct(product, `bx${categoryIndex}${productIndex}`)">ДОБАВИТЬ</a>
 								<div class="number-bx">
 									<span class="minus">-</span>
 									<input type="text" value="1" size="5"/>
@@ -135,7 +135,7 @@
 							</label>
 						</div>
 					</div>
-				  <button slot="footer" @click="sendOrder()" type="submit" class="btn-fixed">Заказать через Whatsapp</button>
+				  <button slot="footer" @click="addToOrder()" type="submit" class="btn-fixed">Продолжить</button>
 				</modal>
 				<modal v-if="showImg" @close="showImg = null" class="image-modal">
 					<template slot="header">{{showImg.name}}</template>
