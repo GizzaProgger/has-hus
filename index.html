@@ -11,6 +11,31 @@
 		localStorage.removeItem("busket")
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <!-- template for the modal component -->
+    <script type="text/x-template" id="modal-template">
+		<transition name="modal">
+		  <div class="modal-mask">
+			<div class="modal-wrapper">
+			  <div class="modal-container">
+				<div class="modal-header">
+				  <h3><slot name="header"/></h3>
+				  <button class="modal-close-btn" @click="$emit('close')">
+					X
+				  </button>
+				</div>
+  
+				<div class="modal-body">
+				  <slot name="default"/>
+				</div>
+  
+				<div class="modal-footer">
+				  <slot name="footer"/>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</transition>
+	  </script>
 </head>
 <body>
 	<noscript>
@@ -80,16 +105,38 @@
 							</div>
 							<div class="right">
 								<div class="img"><img :src="product.imgPath" alt=""></div>
-								<a href="" class="btn">ДОБАВИТЬ</a>
+								<a href="" class="btn" @click="addProduct(product)">ДОБАВИТЬ</a>
 								<div class="number-bx">
-	                         <span class="minus">-</span>
-	                         <input type="text" value="1" size="5"/>
-	                         <span class="plus">+</span>
-	                     </div>
+									<span class="minus">-</span>
+									<input type="text" value="1" size="5"/>
+									<span class="plus">+</span>
+								</div>
 							</div>
 						</li>
 					</ul>
 				</div>
+				<modal v-if="showModal" @close="showModal = false">
+					<div class="m-product">
+						<div class="m-product__left">
+							<img class="m-product__img" :src="currentProduct.imgPath" alt="">
+							<div class="m-product__name">{{ currentProduct.name }}</div>
+						</div>
+						<div class="m-product__right">
+							<div class="m-product__count">х 1</div>
+							<div class="m-product__price">{{ productPrice }} P</div>
+						</div>
+					</div>
+					<div class="m-options">
+						<div class="m-options__title">{{currentProduct.options.title}}</div>
+						<div class="m-options__items">
+							<label class="m-options-item" v-for="(item, i) in currentProduct.options.items">
+								<div class="m-options-item__label">{{ item.title }}<span>{{ item.price }} P</span></div>
+								<input v-model="currentOption" type="radio" name="option" :value="i"> 
+							</label>
+						</div>
+					</div>
+				  <button slot="footer" @click="sendOrder()" type="submit" class="btn-fixed">Заказать через Whatsapp</button>
+				</modal>
 				<div class="total-bx">
 					<div class="price">3 Товара  |  347 P</div>
 					<a href="./inner1.html" class="to-bask">Посмотреть корзину</a>
