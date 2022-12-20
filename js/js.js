@@ -757,21 +757,42 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function updateBusketTwo() {
+	setTimeout(checkDelyveryPrice, 100)
 	if (!document.querySelector(".res")) return
 	let deliveryPrice = getDelyveryPrice()
 	if (deliveryPrice === undefined) return
 	document.querySelector(".res").innerHTML = busket.getAllSum() + " P"
 	if (!deliveryPrice) {
-		deliveryPrice = 0
 		document.querySelector(".res3").innerHTML = "-"
-		document.querySelector(".res2").innerHTML = "-"
-		return
+		// document.querySelector(".res2").innerHTML = "-"
+		// return
 	}
 	document.querySelector(".res3").innerHTML = deliveryPrice + " P"
 	document.querySelector(".res2").innerHTML = busket.getAllSum() + deliveryPrice + " P"
+	
 }
 
 function getDelyveryPrice() {
-	let deliveryPrice = document.querySelector("select")?.selectedOptions[0]?.dataset.price
+	const data = document.querySelector("select")?.selectedOptions[0]?.dataset || {}
+	let deliveryPrice = data.price
+	const freePrice = data.freePrice
+	const price = busket.getAllSum()
+	if(freePrice && price >= freePrice) {
+		deliveryPrice = 0	
+	}
 	return Number(deliveryPrice) || 0
+}
+
+function checkDelyveryPrice(selectEl) {
+	selectEl = selectEl || document.querySelector("select")
+	const data = selectEl?.selectedOptions[0]?.dataset || {}
+	const fromPrice = data.fromPrice
+	const price = busket.getAllSum()
+	const mesEl = selectEl.parentElement.querySelector('.form-error')
+	if(price < fromPrice) {
+		mesEl.innerHTML = `Доставка в данный населенный пункт от: ${fromPrice} рублей`
+		mesEl.style.display = 'block'
+	} else {
+		mesEl.style.display = 'none'	
+	}
 }

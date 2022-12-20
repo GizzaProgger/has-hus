@@ -586,6 +586,12 @@ noscript {
 	max-width: calc(90vw - 40px);
 }
 
+.form-error {
+	font-size: 14px;
+	margin: 0 0 15px 0;
+	color: red;
+}
+
 
 
 
