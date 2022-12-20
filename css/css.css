@@ -443,7 +443,7 @@ noscript {
   
   .modal-container {
 	width: 700px;
-	max-width: 100%;
+	max-width: 90vw;
 	margin: 0px auto;
 	background-color: #fff;
 	border-radius: 2px;
@@ -460,8 +460,11 @@ noscript {
 	margin: 15px 20px;
   }
   .modal-header h3 {
-	margin-top: 0;
-	color: #42b983;
+	margin: 0;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 21px;
+	color: #000000;
   }
 
   .modal-header .modal-close-btn {
@@ -576,6 +579,12 @@ noscript {
 	margin: 0 0 0 15px;
 }
 
+
+.image-modal__img {
+	width: 100%;
+	min-height: 300px;
+	max-width: calc(90vw - 40px);
+}
 
 
 

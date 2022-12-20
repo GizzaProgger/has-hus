@@ -1,6 +1,13 @@
 // register modal component
 Vue.component("modal", {
-	template: "#modal-template"
+	template: "#modal-template",
+	methods: {
+		closeModal($event) {
+			if($event?.target.classList.contains('modal-wrapper')){
+				this.$emit('close')
+			}			
+		}
+	}
 });
 
 new Vue({
@@ -404,7 +411,8 @@ new Vue({
 		activeCategory: 0,
 		currentProduct: null,
 		currentOption: null,
-		showModal: false
+		showModal: false,
+		showImg: null,
 	},
 	computed: {
 		productHasOptions() {
