@@ -734,16 +734,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	if(sendEl) {
 		sendEl.addEventListener("submit", e => {
 			e.preventDefault()
-			const phone = "+79380312109"
-			let text = busket.toString({
-				city: document.querySelector("select")?.value,
-				street: document.querySelector(".street")?.value
-			})
-			window.open(
-				`https://wa.me/${phone}?text=${text}`,
-				'_blank' // <- This is what makes it open in a new window.
-			);
-			busket.clear()
+			if(checkDelyveryPrice()){
+				const phone = "+79380312109"
+				let text = busket.toString({
+					city: document.querySelector("select")?.value,
+					street: document.querySelector(".street")?.value
+				})
+				window.open(
+					`https://wa.me/${phone}?text=${text}`,
+					'_blank' // <- This is what makes it open in a new window.
+				);
+				busket.clear()
+			}
 		})
 	}
 
@@ -792,7 +794,9 @@ function checkDelyveryPrice(selectEl) {
 	if(price < fromPrice) {
 		mesEl.innerHTML = `Доставка в данный населенный пункт от: ${fromPrice} рублей`
 		mesEl.style.display = 'block'
+		return false
 	} else {
-		mesEl.style.display = 'none'	
+		mesEl.style.display = 'none'
+		return true
 	}
 }
