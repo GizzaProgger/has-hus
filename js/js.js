@@ -1,3 +1,15 @@
+// register modal component
+Vue.component("modal", {
+	template: "#modal-template",
+	methods: {
+		closeModal($event) {
+			if($event?.target.classList.contains('modal-wrapper')){
+				this.$emit('close')
+			}			
+		}
+	}
+});
+
 new Vue({
 	el: "#wrapper",
 	data: {
@@ -9,7 +21,15 @@ new Vue({
 						"name": "Смачный мага",
 						"price": "320",
 						"text": "Лосось, сл. сыр, огурец, лук зеленый, джункай соус, унаги соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597423026vNJOM6TDcq.jpg"
+						"imgPath": "https://halaleats.ru/assets/img/items/1597423026vNJOM6TDcq.jpg",
+						"options" : {
+							title: "Размер",
+							items:[
+								{"title": "Маленький", "price": "100"},
+								{"title": "Средний", "price": "150"},
+								{"title": "Большой", "price": "320"},
+							]
+						}
 					},
 					{
 						"name": "Бешенный лосось",
@@ -388,7 +408,66 @@ new Vue({
 				]
 			}
 		],
-		activeCategory: 0
+		activeCategory: 0,
+		currentProduct: null,
+		currentOption: null,
+		showModal: false,
+		showImg: null,
+	},
+	computed: {
+		productHasOptions() {
+			return this.currentProduct?.options
+		},
+		productPrice() {
+			const product = this.currentProduct
+			let price = product.price
+			if(this.currentOption !==null && product?.options?.items) {
+				const option = product.options.items[this.currentOption]
+				if(option) {
+					price = option?.price
+				}				
+			}
+			return price
+		}
+	},
+	methods: {
+		addProduct(product) {
+			this.currentProduct = product
+			if(this.productHasOptions) {
+				this.showModal = true
+			}
+		},
+		sendOrder() {
+			const phone = "+79380312109"
+			const product = this.currentProduct
+			const br = `%0a‎`
+			let text = `Заказ из приложения Байрам: Товары ${br}`
+			let count = 1
+			let price = product.price
+			let optionText = ''
+			if(this.currentOption !==null && product?.options?.items) {
+				const option = product.options.items[this.currentOption]
+				if(option) {
+					optionText += ` (${option?.title})`
+					price = option?.price
+				}				
+			}
+			text += `${product.name}${optionText} - ${price * count} Р за ${count} шт.`
+			text += br
+			const city = document.querySelector("select")?.value
+			const street = document.querySelector(".street")?.value
+			if (city && street) {
+				text += `Доставка по адресу: Г. ${city} Ул. ${street} ${br}`
+				text += `Стоимость доставки: ${getDelyveryPrice()} Р ${br}`
+				text += `Комментарий: ${document.querySelector('.comment')?.value} ${br}`
+			}
+			let total = (price * count) + getDelyveryPrice()
+			text += "Итого: " + total + " Р"
+			window.open(
+				`https://wa.me/${phone}?text=${text}`,
+				'_blank' // <- This is what makes it open in a new window.
+			);
+		}
 	},
 	mounted() {
 		document.addEventListener('scroll', () => {
@@ -678,21 +757,42 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function updateBusketTwo() {
+	setTimeout(checkDelyveryPrice, 100)
 	if (!document.querySelector(".res")) return
 	let deliveryPrice = getDelyveryPrice()
 	if (deliveryPrice === undefined) return
 	document.querySelector(".res").innerHTML = busket.getAllSum() + " P"
 	if (!deliveryPrice) {
-		deliveryPrice = 0
 		document.querySelector(".res3").innerHTML = "-"
-		document.querySelector(".res2").innerHTML = "-"
-		return
+		// document.querySelector(".res2").innerHTML = "-"
+		// return
 	}
 	document.querySelector(".res3").innerHTML = deliveryPrice + " P"
 	document.querySelector(".res2").innerHTML = busket.getAllSum() + deliveryPrice + " P"
+	
 }
 
 function getDelyveryPrice() {
-	let deliveryPrice = document.querySelector("select")?.selectedOptions[0]?.dataset.price
-	return Number(deliveryPrice)
+	const data = document.querySelector("select")?.selectedOptions[0]?.dataset || {}
+	let deliveryPrice = data.price
+	const freePrice = data.freePrice
+	const price = busket.getAllSum()
+	if(freePrice && price >= freePrice) {
+		deliveryPrice = 0	
+	}
+	return Number(deliveryPrice) || 0
+}
+
+function checkDelyveryPrice(selectEl) {
+	selectEl = selectEl || document.querySelector("select")
+	const data = selectEl?.selectedOptions[0]?.dataset || {}
+	const fromPrice = data.fromPrice
+	const price = busket.getAllSum()
+	const mesEl = selectEl.parentElement.querySelector('.form-error')
+	if(price < fromPrice) {
+		mesEl.innerHTML = `Доставка в данный населенный пункт от: ${fromPrice} рублей`
+		mesEl.style.display = 'block'
+	} else {
+		mesEl.style.display = 'none'	
+	}
 }
