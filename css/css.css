@@ -446,12 +446,16 @@ noscript {
 	max-width: 90vw;
 	margin: 0px auto;
 	background-color: #fff;
-	border-radius: 2px;
+	border-radius: 15px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
 	transition: all 0.3s ease;
 	font-family: Helvetica, Arial, sans-serif;
 	overflow: auto;
-  }
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+}
   
   .modal-header {
 	display: flex;
@@ -584,6 +588,11 @@ noscript {
 	width: 100%;
 	min-height: 300px;
 	max-width: calc(90vw - 40px);
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
 }
 
 .form-error {
