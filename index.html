@@ -6,7 +6,9 @@
 	<title>Байрам</title>
 	<meta name="viewport" content="width=430" />
 	<meta name="MobileOptimized" content="430" />
-	<link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="https://halaleda.ru/sharedFiles/css/style.css">
+	<link rel="stylesheet" href="css/theme.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<script>
 		localStorage.removeItem("busket")
 	</script>
@@ -49,36 +51,56 @@
 	<div id="wrapper">
 		<div class="center-wrap">
 			<div class="main-wrapper">
-				<div class="logo-bx">
-					<div class="logo"><img src="img/logo.png" width="80" alt=""></div>
-					<div class="tt">
-						<div class="t1">Суши Байрам</div>
-						<div class="t2">Суши</div>
+				<a href="https://halaleda.ru/" class="back">
+					<svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<line x1="1.99099" y1="11.9804" x2="13.0901" y2="1.89033" stroke="#3478F6" stroke-width="3"/>
+						<line x1="2.06066" y1="10.0297" x2="12.6673" y2="20.6363" stroke="#3478F6" stroke-width="3"/>
+					</svg>
+				</a>
+				<div class="parthner">
+					<div class="partner__header">
+						<img
+							src="https://halaleda.ru/assets/bairam.webp"
+							class="partner__img"
+						/>
+						<div class="partner__data">
+							<div class="partner__title">Название</div>
+							<div class="partner__actions">
+								<a
+									class="partner__button"
+									style="color: #000"
+									href="'tel:1231234'"
+								>
+									Позвонить
+								</a>
+								<a
+									class="partner__button"
+									style="background: #20b56c"
+									href="https://wa.me/"
+									target="_blank"
+								>
+									Whatsapp
+								</a>
+								<a
+									class="partner__button"
+									style="background: #0071eb"
+									href="https://telegram.me/"
+									target="_blank"
+								>
+									Telegram
+								</a>
+								<a
+									class="partner__button"
+									style="background: #000"
+									href="google.com"
+									target="_blank"
+								>
+									Instagram
+								</a>
+							</div>
+						</div>
 					</div>
-					<label class="sta-check">
-						<input type="checkbox">
-						<span>
-							5
-							<svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <g clip-path="url(#clip0_43_25)">
-                     <path d="M7.5 1.75L9.43125 5.6625L13.75 6.29375L10.625 9.3375L11.3625 13.6375L7.5 11.6063L3.6375 13.6375L4.375 9.3375L1.25 6.29375L5.56875 5.6625L7.5 1.75Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                     </g>
-                     <defs>
-                     <clipPath id="clip0_43_25">
-                     <rect width="15" height="15" fill="white" transform="translate(0 0.5)"/>
-                     </clipPath>
-                     </defs>
-                     </svg>
-						</span>
-					</label>
 				</div>
-				<div class="btns-bx">
-					<div class="text">Город Учкекен😅 Перед поликлиникой.</div>
-					<div class="btns">
-						<a href="tel:+79380312109" style="width: 100%;" class="btn bt1">Позвонить</a>
-					</div>
-				</div>
-				<div class="banner"><a href=""><img src="img/ban.png" width="390" alt=""></a></div>
 				<div class="nav-spacer">
 					<ul class="nav">
 						<li v-for="(category, i) in categories">
@@ -96,24 +118,47 @@
 					class="items-bx" :id="'bx' + categoryIndex"
 				>
 					<div class="h3">{{ category.name }}</div>
-					<ul class="items-list">
-						<li v-for="(product, productIndex) in category.items">
-							<div class="left">
-								<div class="t1">{{ product.name }}</div>
-								<div class="t2" v-html="product.text"></div>
-								<div class="t3">{{ product.price }} P</div>
+					<div class="offer-card-wrapper">
+						<div class="offer-card" v-for="(product, productIndex) in category.items">
+							<div class="offer-card__photo">
+								<img
+									:src="product.imgPath"
+									@click="showImg = product"
+									alt=""
+									class="offer-card__img"
+								/>
 							</div>
-							<div class="right">
-								<div class="img"><img :src="product.imgPath" @click="showImg = product" alt=""></div>
-								<a href="" class="btn" @click="addProduct(product, `bx${categoryIndex}${productIndex}`)">ДОБАВИТЬ</a>
-								<div class="number-bx">
-									<span class="minus">-</span>
-									<input type="text" value="1" size="5"/>
-									<span class="plus">+</span>
+							<div class="offer-card__data">
+								<div class="offer-card__price">{{ product.price }} P</div>
+								<div class="offer-card__name">{{ product.name }}</div>
+								<div class="offer-card__wt" v-html="product.text">270 мл</div>
+							</div>
+							<button
+								v-if="!busket.get(`bx${categoryIndex}${productIndex}`)"
+								class="offer-card__button"
+								@click="addProduct(product, `bx${categoryIndex}${productIndex}`)"
+							>Добавить</button>
+							<div v-else class="plus-minus">
+								<div
+									@click="busketMinus(`bx${categoryIndex}${productIndex}`)"
+									class="plus-minus__item"
+								>
+									<div style="margin-top: 0">
+										-
+									</div>
+								</div>
+								<input class="plus-minus__num" type="text" disabled :value="busket.get(`bx${categoryIndex}${productIndex}`).count" size="5"/>
+								<div
+									@click="busketPlus(`bx${categoryIndex}${productIndex}`)"
+									class="plus-minus__item"
+								>
+									<div style="margin-top: 4px">
+										+
+									</div>
 								</div>
 							</div>
-						</li>
-					</ul>
+						</div>
+					</div>
 				</div>
 				<modal v-if="showModal" @close="showModal = false">
 					<div class="m-product">
@@ -141,10 +186,10 @@
 					<template slot="header">{{showImg.name}}</template>
 					<img class="image-modal__img" :src="showImg.imgPath" :alt="showImg.name">				
 				</modal>
-				<div class="total-bx">
-					<div class="price">3 Товара  |  347 P</div>
-					<a href="./inner1.html" class="to-bask">Посмотреть корзину</a>
-				</div>
+				<a href="./inner1.html" class="total-bx" v-if="busket && busket.getAllSum()">
+					<div class="price">{{ busket.getAllCount() }} Товара  |  {{ busket.getAllSum() }} P</div>
+					<span  class="to-bask">Посмотреть корзину</>
+					</a>
 			</div>
 		</div>
 	</div>

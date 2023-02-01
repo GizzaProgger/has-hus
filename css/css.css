@@ -601,8 +601,608 @@ noscript {
 	color: red;
 }
 
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-ThinItalic.eot');
+	src: local('GT Eesti Pro Text Thin Italic'), local('GTEestiProText-ThinItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-ThinItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-ThinItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-ThinItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-ThinItalic.ttf') format('truetype');
+	font-weight: 100;
+	font-style: italic;
+}
 
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-Medium.eot');
+	src: local('GT Eesti Pro Text Medium'), local('GTEestiProText-Medium'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Medium.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Medium.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Medium.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
 
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-LightItalic.eot');
+	src: local('GT Eesti Pro Text Light Italic'), local('GTEestiProText-LightItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-LightItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-LightItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-LightItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
 
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Bold.eot');
+	src: local('GT Eesti Pro Display Bold'), local('GTEestiProDisplay-Bold'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Bold.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Bold.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
 
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-Light.eot');
+	src: local('GT Eesti Pro Text Light'), local('GTEestiProText-Light'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Light.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Light.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Light.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
 
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-MediumItalic.eot');
+	src: local('GT Eesti Pro Display Medium Italic'), local('GTEestiProDisplay-MediumItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-MediumItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-MediumItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-MediumItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-RegularItalic.eot');
+	src: local('GT Eesti Pro Text Regular Italic'), local('GTEestiProText-RegularItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-RegularItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-RegularItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-RegularItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-RegularItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text Book';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-Book.eot');
+	src: local('GT Eesti Pro Text Book'), local('GTEestiProText-Book'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Book.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Book.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Book.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-BoldItalic.eot');
+	src: local('GT Eesti Pro Text Bold Italic'), local('GTEestiProText-BoldItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BoldItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BoldItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BoldItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLightItalic.eot');
+	src: local('GT Eesti Pro Text UltraLight Italic'), local('GTEestiProText-UltraLightItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLightItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLightItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLightItalic.ttf') format('truetype');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Thin.eot');
+	src: local('GT Eesti Pro Display Thin'), local('GTEestiProDisplay-Thin'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Thin.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Thin.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Thin.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-Regular.eot');
+	src: local('GT Eesti Pro Text Regular'), local('GTEestiProText-Regular'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Regular.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Regular.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Regular.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Light.eot');
+	src: local('GT Eesti Pro Display Light'), local('GTEestiProDisplay-Light'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Light.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Light.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Light.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBold.eot');
+	src: local('GT Eesti Pro Display UltraBold'), local('GTEestiProDisplay-UltraBold'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBold.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBold.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBold.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBoldItalic.eot');
+	src: local('GT Eesti Pro Display UltraBold Italic'), local('GTEestiProDisplay-UltraBoldItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBoldItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBoldItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBoldItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraBoldItalic.ttf') format('truetype');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Medium.eot');
+	src: local('GT Eesti Pro Display Medium'), local('GTEestiProDisplay-Medium'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Medium.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Medium.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLight.eot');
+	src: local('GT Eesti Pro Display UltraLight'), local('GTEestiProDisplay-UltraLight'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLight.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLight.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLight.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-RegularItalic.eot');
+	src: local('GT Eesti Pro Display Regular Italic'), local('GTEestiProDisplay-RegularItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-RegularItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-RegularItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-RegularItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-RegularItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-LightItalic.eot');
+	src: local('GT Eesti Pro Display Light Italic'), local('GTEestiProDisplay-LightItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-LightItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-LightItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-LightItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-Bold.eot');
+	src: local('GT Eesti Pro Text Bold'), local('GTEestiProText-Bold'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Bold.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Bold.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Bold.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-Thin.eot');
+	src: local('GT Eesti Pro Text Thin'), local('GTEestiProText-Thin'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Thin.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Thin.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Thin.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLightItalic.eot');
+	src: local('GT Eesti Pro Display UltraLight Italic'), local('GTEestiProDisplay-UltraLightItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLightItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLightItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-UltraLightItalic.ttf') format('truetype');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-BoldItalic.eot');
+	src: local('GT Eesti Pro Display Bold Italic'), local('GTEestiProDisplay-BoldItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-BoldItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-BoldItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-BoldItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-MediumItalic.eot');
+	src: local('GT Eesti Pro Text Medium Italic'), local('GTEestiProText-MediumItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-MediumItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-MediumItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-MediumItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-MediumItalic.ttf') format('truetype');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text Book';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-BookItalic.eot');
+	src: local('GT Eesti Pro Text Book Italic'), local('GTEestiProText-BookItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BookItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BookItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BookItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-BookItalic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLight.eot');
+	src: local('GT Eesti Pro Text UltraLight'), local('GTEestiProText-UltraLight'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLight.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLight.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLight.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProText-UltraLight.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Regular.eot');
+	src: local('GT Eesti Pro Display Regular'), local('GTEestiProDisplay-Regular'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Regular.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Regular.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Display';
+	src: url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-ThinItalic.eot');
+	src: local('GT Eesti Pro Display Thin Italic'), local('GTEestiProDisplay-ThinItalic'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-ThinItalic.eot?#iefix') format('embedded-opentype'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-ThinItalic.woff2') format('woff2'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-ThinItalic.woff') format('woff'),
+			url('https://halaleda.ru/assets/fonts/GTEestiProDisplay-ThinItalic.ttf') format('truetype');
+	font-weight: 100;
+	font-style: italic;
+}
+
+.offer-card-wrapper {
+	display: grid;
+	grid-column: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-row-gap: 15px;
+	grid-column-gap: 15px;
+}
+
+.offer-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 5px;
+	background: #f5f4f2;
+	border-radius: 20px;
+	max-width: 180px;
+	justify-content: space-between;
+}
+.offer-card__photo {
+	display: flex;
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	max-height: 150px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.offer-card__photo img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.offer-card__data {
+	margin-top: 12px;
+}
+.offer-card__price {
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 20px;
+	color: #000;
+}
+.offer-card__name {
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 20px;
+	color: #000;
+}
+.offer-card__wt {
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 25px;
+	color: #545454;
+}
+.offer-card__button {
+	display: flex;
+	align-items: center;
+	margin-top: 12px;
+	padding: 10px;
+	height: 40px;
+	background: #fff;
+	border-radius: 25px;
+	border: 0;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 20px;
+	color: #000;
+	cursor: pointer;
+}
+.partner__header {
+	 display: flex;
+	 align-items: flex-end;
+	 height: 270px;
+	 position: relative;
+	 z-index: 1;
+}
+ .partner__header img {
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 top: 0;
+	 bottom: 0;
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+	 z-index: -1;
+}
+ .partner__data {
+	 padding: 0 15px 35px;
+	 margin: 0 auto;
+}
+ .partner__title {
+	 margin-bottom: 15px;
+	 font-weight: 700;
+	 font-size: 37px;
+	 line-height: 43px;
+	 color: #fff;
+	 text-shadow: 0 0 8px #000a;
+}
+ .partner__actions {
+	 display: flex;
+	 align-items: center;
+}
+ .partner__button {
+	 display: flex;
+	 padding: 15px 10px;
+	 background: #fff;
+	 border-radius: 15px;
+	 margin-right: 10px;
+	 border: 0;
+	 font-weight: 700;
+	 font-size: 14px;
+	 line-height: 16px;
+	 text-align: center;
+	 color: #fff;
+	 cursor: pointer;
+	 text-decoration: none;
+}
+ .partner__button:last-child {
+	 margin-right: 0;
+}
+ .partner__content {
+	 position: relative;
+	 margin-top: -15px;
+	 padding: 15px 15px 30px 15px;
+	 background: #fff;
+	 border-radius: 20px 20px 0px 0px;
+	 z-index: 5;
+}
+ .partner__tabs {
+	 margin-bottom: 35px;
+	 position: sticky;
+	 top: 0;
+	 background: #fff;
+	 z-index: 6;
+}
+ .partner__section {
+	 margin-bottom: 30px;
+}
+ .partner__section:last-child {
+	 margin-bottom: 0;
+}
+ .partner__section-title {
+	 margin-bottom: 30px;
+	 font-weight: 700;
+	 font-size: 27px;
+	 line-height: 31px;
+	 color: #000;
+}
+ .partner__card {
+	 margin-bottom: 45px;
+}
+ .partner__card:last-child {
+	 margin-bottom: 0;
+}
+ .service-wrapper {
+	 max-height: calc(100vh - 20px) !important;
+	 overflow: auto;
+	/* Track */
+}
+ .service-wrapper::-webkit-scrollbar {
+	 width: 0.4em;
+}
+ .service-wrapper::-webkit-scrollbar-track {
+	 box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+	 border-radius: 5px;
+}
+ .service-wrapper::-webkit-scrollbar-thumb {
+	 background-color: #0071eb;
+	 border-radius: 5px;
+}
+.nav {
+	background: #fff;
+	border-radius: 10px;
+	margin-top: -10px;
+	z-index: 1;
+	position: relative;
+	padding: 0 15px;
+}
+.main-wrapper {
+	padding: 0;
+}
+.items-bx {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 30px;
+}
+.nav li {
+	margin: 0 17px;
+}
+.nav li:first-child {
+	margin-left: 0;
+}
+.nav li:last-child {
+	margin-left: 0;
+}
+.total-bx {
+	text-decoration: none;
+}
+.plus-minus {
+	display: grid;
+	grid-template-columns: 2fr 1fr 2fr;
+	gap: 5px;
+	margin-top: 12px;
+}
+.plus-minus__item {
+	cursor: pointer;
+	background: #fff;
+	height: 40px;
+	font-weight: 500;
+	font-size: 30px;
+	padding: 0 20px;
+}
+.plus-minus__item:first-child {
+	border-radius: 25px 0 0 25px;
+	-webkit-border-radius: 25px 0 0 25px;
+	-moz-border-radius: 25px 0 0 25px;
+	-ms-border-radius: 25px 0 0 25px;
+	-o-border-radius: 25px 0 0 25px;
+}
+.plus-minus__item:last-child {
+	border-radius: 0 25px 25px 0;
+	-webkit-border-radius: 0 25px 25px 0;
+	-moz-border-radius: 0 25px 25px 0;
+	-ms-border-radius: 0 25px 25px 0;
+	-o-border-radius: 0 25px 25px 0;
+	text-align: right;
+}
+.total-bx {
+	min-height: 60px;
+}
+.plus-minus__num {
+	max-width: 40px;
+	border: 0;
+	background: #fff;
+	font-weight: 500;
+	text-align: center;
+	font-size: 30px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+.back {
+	position: absolute;
+	z-index: 10;
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	top: 15px;
+	left: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 0 1px #0002;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+.back > svg {
+	margin-left: -3px;
+}

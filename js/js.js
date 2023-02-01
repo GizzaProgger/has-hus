@@ -10,541 +10,10 @@ Vue.component("modal", {
 	}
 });
 
-new Vue({
-	el: "#wrapper",
-	data: {
-		categories: [
-			{
-				"name": "Роллы",
-				"items": [
-					{
-						"name": "Смачный мага",
-						"price": "320",
-						"text": "Лосось, сл. сыр, огурец, лук зеленый, джункай соус, унаги соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597423026vNJOM6TDcq.jpg",
-						"options" : {
-							title: "Размер",
-							items:[
-								{"title": "Маленький", "price": "100"},
-								{"title": "Средний", "price": "150"},
-								{"title": "Большой", "price": "320"},
-							]
-						}
-					},
-					{
-						"name": "Бешенный лосось",
-						"price": "320",
-						"text": "Лосось в фирменном соусе, сл. сыр, огурец.",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626615971txqlbxIszq.jpg"
-					},
-					{
-						"name": "Филадельфия классика",
-						"price": "310",
-						"text": "лосось, сл. сыр, огурец.",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597421973gVljP1oSgm.jpg"
-					},
-					{
-						"name": "Филадельфия люкс",
-						"price": "320",
-						"text": "Лосось, сл. сыр,  огурец, красная икра.",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608117614bm5Doosy5k.jpg"
-					},
-					{
-						"name": "Филадельфия гриль",
-						"price": "320",
-						"text": "Лосось гриль, сл. сыр, огурец, унаги соус, кунжут.",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608117649et92uCUIKz.jpg"
-					},
-					{
-						"name": "Филадельфия микс",
-						"price": "320",
-						"text": "Лосось, угорь, сл. сыр, огурец.",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608116972nDpqFEDUX7.jpg"
-					},
-					{
-						"name": "Сливочная филадельфия",
-						"price": "320",
-						"text": "Лосось, сл. сыр.",
-						"imgPath": "https://halaleats.ru/assets/img/items/16081170317EHG5sw9u5.jpg"
-					},
-					{
-						"name": "Филадельфия с креветкой",
-						"price": "320",
-						"text": "Лосось, огурец, креветка, сл. сыр",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597422257lz2keLutIK.jpg"
-					},
-					{
-						"name": "Филадельфия с крабом",
-						"price": "320",
-						"text": "Лосось, огурец, краб, сл. сыр.",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597422646YgY5TT7Gan.jpg"
-					},
-					{
-						"name": "Филадельфия с тунцом",
-						"price": "320",
-						"text": "Лосось, огурец, тунец, сл. сыр",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608117565J33badSQwZ.jpg"
-					},
-					{
-						"name": "Канада",
-						"price": "320",
-						"text": "Лосось, огурец, сл. сыр, угорь жаренный",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597424738fRptZsl3Jx.jpg"
-					},
-					{
-						"name": "Калифорния классика",
-						"price": "290",
-						"text": "Майонез, огурец, краб...",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597423633nS1jkfdQm1.jpg"
-					},
-					{
-						"name": "Калифорния с креветкой",
-						"price": "310",
-						"text": "Креветка, огурец, сл. сыр, икра масаго",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597424017JGXFZDb2X0.jpg"
-					},
-					{
-						"name": "Калифорния с коп. лососем",
-						"price": "310",
-						"text": "коп. лосось, огурец, сл. сыр, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608117732zfm957R1t6.jpg"
-					},
-					{
-						"name": "Пирамида",
-						"price": "300",
-						"text": "Краб, сл. сыр, икра масаго",
-						"imgPath": "https://halaleats.ru/assets/img/items/159742412316ODDoJLct.jpg"
-					},
-					{
-						"name": "Динамит",
-						"price": "310",
-						"text": "Лосос, сл. сыр, огурец, ширарачи соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626616081eTAuUrUJyv.jpg"
-					},
-					{
-						"name": "Учкекенский понт",
-						"price": "310",
-						"text": "Лосось, креветка, сл. сыр, огурец, ширарачи соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/159742510493xAj1A1CC.jpg"
-					},
-					{
-						"name": "Терезинский вечер",
-						"price": "310",
-						"text": "Лосось, краб, огурец, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974251878HhH50c7dO.jpg"
-					},
-					{
-						"name": "Ронин",
-						"price": "310",
-						"text": "Коп. лосось, сл. сыр, огурец, лук зел., спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608117760d55J9TVzpA.jpg"
-					},
-					{
-						"name": "Цезарь ролл",
-						"price": "310",
-						"text": "Лосось, гриль, огурец, соус цезарь, помидор",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597424963FaIVTieUvy.jpg"
-					},
-					{
-						"name": "Чикен ролл",
-						"price": "280",
-						"text": "Курица, майонез, огурец, помидор",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597424792VW8kX9PKF7.jpg"
-					}
-				]
-			},
-			{
-				"name": "Запеченные роллы",
-				"items": [
-					{
-						"name": "Император",
-						"price": "320",
-						"text": "Лосось, сл. сыр, огурец",
-						"imgPath": "https://halaleats.ru/assets/img/items/16266159841jgWUXBfbA.jpg"
-					},
-					{
-						"name": "Чипа",
-						"price": "310",
-						"text": "Краб, масаге, сл. сыр, огурец, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626616012XIIaNKkGQj.jpg"
-					},
-					{
-						"name": "Спайси лосось",
-						"price": "310",
-						"text": "Лосось, сл. сыр, огурец, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626616105N3jVSX3IgC.jpg"
-					},
-					{
-						"name": "Спайси краб",
-						"price": "310",
-						"text": "Краб, сл. сыр, огурец, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626616056GWj5xymN3w.jpg"
-					},
-					{
-						"name": "Хотто спйас лосось",
-						"price": "310",
-						"text": "Лосось, сл. сыр, огурец, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626615998cfrSBjZ49i.jpg"
-					},
-					{
-						"name": "Хотто спайс краб",
-						"price": "310",
-						"text": "Краб, сл. сыр, огурец, спайси соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1626615998cfrSBjZ49i.jpg"
-					},
-					{
-						"name": "Запеченная филадельфия ",
-						"price": "310",
-						"text": "Лосось,сл. сыр, огурец, сырный соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597420872dMS6oSOxqZ.jpg"
-					},
-					{
-						"name": "Запеченная калифорния",
-						"price": "310",
-						"text": "Краб, сл. сыр, огурец, сырный соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597420814TKKOeiTb1M.jpg"
-					},
-					{
-						"name": "Запеченный сливочный ",
-						"price": "310",
-						"text": "Сл. сыр, огурец, унаги соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974257380XGLzVu5fs.jpg"
-					},
-					{
-						"name": "Запеченный с угрем",
-						"price": "310",
-						"text": "Угорь, сл. сыр, огурец, сырный замес",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597425680yUIsJWVYjd.jpg"
-					},
-					// {
-					// 	"name": "Запеченный с тунцом",
-					// 	"price": "310",
-					// 	"text": "Тунец, сл. сыр, огурец, сырный замес",
-					// 	"imgPath": "42"
-					// },
-					{
-						"name": "Запеченный с мидиями",
-						"price": "310",
-						"text": "Мидии, сл. сыр, огурец, сырный замес, унаги соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974257776CjeAORqQl.jpg"
-					},
-					{
-						"name": "Запеченный окунь",
-						"price": "310",
-						"text": "Окунь, сл. сыр, огурец, сырный замес",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597420938pABNBR2lPN.jpg"
-					},
-					{
-						"name": "Запеченный с коп. лососем",
-						"price": "310",
-						"text": "Коп. лосось, сл. сыр, огурец, сырный замес",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974209999KQAwIuNAU.jpg"
-					},
-					{
-						"name": "Запеченный лосось и краб",
-						"price": "310",
-						"text": " Лосось, краб, сл. сыр, сырный замес",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597426138iae6iBXA8c.jpg"
-					},
-					// {
-					// 	"name": "Запеченный с курицей",
-					// 	"price": "310",
-					// 	"text": "Курица, сл. сыр, огурец, помидор, сырный замес",
-					// 	"imgPath": "23"
-					// },
-					{
-						"name": "Запеченный с креветкой",
-						"price": "310",
-						"text": "Креветка, сл. сыр, огурец, сырный замес",
-						"imgPath": "https://halaleats.ru/assets/img/various/blank-white.jpg"
-					}
-				]
-			},
-			{
-				"name": "Жаренные ролы",
-				"items": [
-					{
-						"name": "Темпура с лососем",
-						"price": "310",
-						"text": "Лосось, огурец, сл. сыр",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597426526kMN9r5gVv2.jpg"
-					},
-					{
-						"name": "Темпура с крабом",
-						"price": "310",
-						"text": "Краб, огурец, сл. сыр",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597426428TlwnU74cDU.jpg"
-					},
-					// {
-					// 	"name": "Темпура калифорния",
-					// 	"price": "310",
-					// 	"text": "Краб, огурец, сл. сыр, спайси соус",
-					// 	"imgPath": "4"
-					// },
-					{
-						"name": "Инь-янь",
-						"price": "320",
-						"text": "Лосось, помидор, сл. сыр, сыр гауда, масаге",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608116939KtiWnVJxft.jpg"
-					},
-					{
-						"name": "Темпура пирамида",
-						"price": "310",
-						"text": "Лосось, краб, сл. сыр, огурец",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597426776PuS98KrDUT.jpg"
-					},
-					{
-						"name": "Темпура курица",
-						"price": "310",
-						"text": "Курица, сл. сыр, огурец, помидор, спайси соус, масаге",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597426848xLAH02b0lg.jpg"
-					},
-					{
-						"name": "Темпура угорь",
-						"price": "310",
-						"text": "Угорь, сл. сыр, огурец, кунжут, унаги соус",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597426736TUElAW6YA6.jpg"
-					},
-					{
-						"name": "Темпура с тунцом",
-						"price": "310",
-						"text": "Тунец, огурец, сл. сыр, спайси соус, кунжут",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608117917W6u6JsHYua.jpg"
-					}
-				]
-			},
-			{
-				"name": "Классические роллы",
-				"items": [
-					{
-						"name": "Классические роллы ",
-						"price": "120",
-						"text": "",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974280902dKBmPYN8N.jpg"
-					},
-					{
-						"name": "Классическеи роллы с крабом",
-						"price": "100",
-						"text": "",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974280902dKBmPYN8N.jpg"
-					},
-					{
-						"name": "Классические роллы с огурцом ",
-						"price": "70",
-						"text": "",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974280902dKBmPYN8N.jpg"
-					},
-					{
-						"name": "Классические роллы с  масаго",
-						"price": "70",
-						"text": "",
-						"imgPath": "https://halaleats.ru/assets/img/items/15974280902dKBmPYN8N.jpg"
-					}
-				]
-			},
-			{
-				"name": "Сеты",
-				"items": [
-					{
-						"name": "Медовые водопады 72шт",
-						"price": "2170",
-						"text": "\"Запеченный лосось<br>Запеченный сливочный<br>Темпура краб<br>Темпура курица<br>Калифорния<br>Филадельфия<br>Ронии<br>Пиромида<br>Калифорния креветка\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/159742738369a7sUVKZX.jpg"
-					},
-					{
-						"name": "Запеченный 40шт",
-						"price": "1250",
-						"text": "\"Запеченная филадельфия<br>Запеченная калифорния<br>Запеченный сливочный<br>Запеченный тунец<br>Запеченный окунь\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608440802FKk8PUrcsg.jpg"
-					},
-					{
-						"name": "Джункай 48шт",
-						"price": "1550",
-						"text": "\"Филадельфия гриль<br>Филадельфия тунец<br>Запеченный окунь<br>запеченная калифорния<br>Инь-Янь<br>Майами\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608440789ETYs9b4AJu.jpg"
-					},
-					{
-						"name": "Рим-Гора 48шт",
-						"price": "1550",
-						"text": "\"Филадельфия<br>Калифорния<br>Ронин<br>Запеченный окунь<br>Терезинский вечер<br>Темпура лосось\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/159742767262wHqMp0R3.jpg"
-					},
-					{
-						"name": "Филадельфия 24шт",
-						"price": "800",
-						"text": "\"Филадельфия<br>Филадельфия с крабом<br>Филадельфия с креветкой\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597427060X1xdg0ZrXG.jpg"
-					},
-					{
-						"name": "Горячий 24шт",
-						"price": "800",
-						"text": "\"Темпура с крабом<br>Темпура с креветкой<br>Запеченный с лососем\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597427968L9z6YRT853.jpg"
-					},
-					{
-						"name": "Учкекен 40шт",
-						"price": "1250",
-						"text": "\"Филадельфия<br>Калифорния лосось<br>Учкекенский понт<br>Сливочный запеченный <br>Темпура чикен\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597427906fTMrr1oMqn.jpg"
-					},
-					{
-						"name": "Общий 32шт",
-						"price": "1000",
-						"text": "\"Филадельфия<br>Запеченный с лососем<br>Темпура с крабом<br>Канада\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597427504pE0SkSwT7C.jpg"
-					},
-					{
-						"name": "Джанго 28шт",
-						"price": "650",
-						"text": "\"Филадельфия<br>Калифорния<br>Классический с огурцом<br>Классический с крабом\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1608440821ywErXndZVB.jpg"
-					},
-					{
-						"name": "Классический 24шт",
-						"price": "300",
-						"text": "\"С лососем<br>С огурцом<br>С крабом<br>С масаго\"",
-						"imgPath": "https://halaleats.ru/assets/img/items/1597427743dpgLsEPCOc.jpg"
-					}
-				]
-			}
-		],
-		activeCategory: 0,
-		currentProduct: null,
-		currentProductKey: null,
-		currentOption: null,
-		showModal: false,
-		showImg: null,
-	},
-	computed: {
-		productHasOptions() {
-			return this.currentProduct?.options
-		},
-		productPrice() {
-			const product = this.currentProduct
-			let price = product.price
-			if(this.currentOption !==null && product?.options?.items) {
-				const option = product.options.items[this.currentOption]
-				if(option) {
-					price = option?.price
-				}				
-			}
-			return price
-		}
-	},
-	methods: {
-		addProduct(product, key) {
-			this.currentProduct = product
-			this.currentProductKey = key
-			if(this.productHasOptions) {
-				this.showModal = true
-			}
-		},
-		addToOrder() {
-			const item = busket.get(this.currentProductKey)
-			const product = this.currentProduct
-			if(this.currentOption !==null && product?.options?.items) {
-				const option = product.options.items[this.currentOption]
-				if(option) {
-					item.name += ` (${option?.title})`
-					item.price = option?.price
-					busket.saveToLs()
-				}				
-			}
-			this.showModal = false
-
-		},
-	},
-	mounted() {
-		document.addEventListener('scroll', () => {
-
-		})
-	},
-})
-
-jQuery(document).ready(function($){
-	$(window).on('scroll', function(){
-		var sc = $(this).scrollTop();
-		if(sc > $('.nav-spacer').offset().top){
-			$('.nav').addClass('fixed')
-		}else{
-			$('.nav').removeClass('fixed')
-		}
-	})
-
-	//mnu
-	var menu_selector = ".nav"; 
-	function onScroll(){
-	    var scroll_top = $(document).scrollTop();
-	    $(menu_selector + " a").each(function(){
-	        var hash = $(this).attr("href");
-	        var target = $(hash);
-	        if (target.position().top - 20 <= scroll_top && target.position().top - 20 + target.outerHeight() > scroll_top) {
-	            $(menu_selector + " a.active").removeClass("active");
-	            $(this).addClass("active");
-	        } else {
-	            $(this).removeClass("active");
-	        }
-	    });
-	}
-	 
-	$('.items-list .btn').on('click', function(e){
-		e.preventDefault()
-		$(this).next().addClass('act')
-		$(this).hide()
-	})
-
-	$(document).on("scroll", onScroll);
-	 
-	$(".nav a[href^=#]").click(function(e){
-	        e.preventDefault();
-	 
-	        $(document).off("scroll");
-	        $(menu_selector + " a.active").removeClass("active");
-	        $(this).addClass("active");
-	        var hash = $(this).attr("href");
-	        var target = $(hash);
-	 
-	        $("html, body").animate({
-	            scrollTop: target.offset().top
-	        }, 500, function(){
-	            window.location.hash = hash;
-	            $(document).on("scroll", onScroll);
-	        });
-	});
-
-	$('.minus').click(function () {
-                var $input = $(this).parent().find('input');
-                var count = parseInt($input.val()) - 1;
-                count = count < 0 ? 0 : count;
-                $input.val(count);
-                $input.change();
-                return false;
-  });
-  $('.plus').click(function () {
-                var $input = $(this).parent().find('input');
-                $input.val(parseInt($input.val()) + 1);
-                $input.change();
-                return false;
-  });
-	 
-
-});
-
 class Busket {
 	constructor(items = {}) {
-		// items = {
-		// 	key: {
-		// 		name: 'string',
-		// 		count: 1,
-		// 		price: 2,
-		//    text: "string"
-		// 	}
-		// }
 		this.items = items
 		this.loadFromLs()
-		Object.values(this.items).forEach(item => {
-			this.renderItem(item.key)
-		})
 	}
 	clear() {
 		this.items = {}
@@ -557,17 +26,16 @@ class Busket {
 			price,
 			key
 		}
-		this.updateView()
+		this.saveToLs()
 	}
 	add(key, count = 1) {
 		if (!this.items[key]) return
 		this.items[key].count += count
-		this.updateView()
+		this.saveToLs()
 	}
 	delete(key, count = 1) {
 		if (!this.items[key] || this.items[key].count  == 0 ) return
 		this.items[key].count -= count
-		this.updateView()
 	}
 	get(key) {
 		if (!this.items[key]) return
@@ -599,36 +67,6 @@ class Busket {
 		text += "Итого: " + price + " Р"
 		return text
 	}
-	updateView() {
-		const totalbx = document.querySelector(".total-bx")
-		if (totalbx) {
-			if (this.getAllCount() <= 0) {
-				totalbx.style.display = "none"
-			} else {
-				totalbx.style.display = "flex"
-			}
-			document.querySelector(".total-bx .price").innerHTML = `${this.getAllCount()} Товара  |  ${this.getAllSum()} P`
-		}
-		this.saveToLs()
-	}
-	renderItem(key) {
-		const busketList = document.querySelector(".basket-list")
-		if (!busketList) return
-		const { name, price, count } = this.get(key)
-		let item = `
-		<li data-key="${key}">
-			<div class="name">${name}</div>
-			<div class="right">
-				<div class="number-bx">
-					<span class="minus">-</span>
-					<input type="text" value="${count}" size="5">
-					<span class="plus">+</span>
-				</div>
-			<div class="price">${price * count} P</div>
-			</div>
-		</li>`
-		busketList.insertAdjacentHTML('beforeend', item)
-	}
 	saveToLs() {
 		localStorage.setItem('busket', JSON.stringify(this.items))
 	}
@@ -639,89 +77,281 @@ class Busket {
 	}
 }
 
-const busket = new Busket()
+const vue = new Vue({
+	el: "#wrapper",
+	data: {
+		categories: [
+			{
+				"name": "Сладкое",
+				"items": [
+					{
+						"name": "Сметанник",
+						"price": "46",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/smetannik.webp"
+					},
+					{
+						"name": "Шарлотка",
+						"price": "46",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/applesharlotka.webp"
+					},
+					{
+						"name": "Пирожок с вишней",
+						"price": "43",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokvishnya.webp"
+					},
+					{
+						"name": "Гребешок с яблоком",
+						"price": "29",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/grebeshok-apple.webp"
+					},
+					{
+						"name": "Ягодный мешочек",
+						"price": "43",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/berriesmeshok.webp"
+					},
+					{
+						"name": "Улитка с корицей",
+						"price": "36",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/ulitka.webp"
+					},
+					{
+						"name": "Маковник",
+						"price": "54",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/makovik.webp"
+					},
+				],
+			},
+			{
+				"name": "Пирожки",
+				"items": [
+					{
+						"name": "Пирожок с капустой",
+						"price": "24",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokkapusta.webp"
+					},
+					{
+						"name": "Пирожок с яйцом и зеленым луком",
+						"price": "45",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokeggzelen.webp"
+					},
+					{
+						"name": "Пирожок с картофелем и с луком",
+						"price": "31",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokpotatoeszelen2.webp"
+					},
+					{
+						"name": "Эчпочмак",
+						"price": "43",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/echpomak.webp"
+					},
+					{
+						"name": "Пирожок с мясом и капустой",
+						"price": "36",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokmeatkapusta.webp"
+					},
+					{
+						"name": "Хачапури с сыром",
+						"price": "46",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/hachapuri.webp"
+					},
+					{
+						"name": "Пирожок с курицей и сыром",
+						"price": "54",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokchickencheese.webp"
+					},
+					{
+						"name": "Пирожок курочка ряба",
+						"price": "54",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/pirozokryaba.webp"
+					},
+				],
+			},
+			{
+				"name": "Пиццы",
+				"items": [
+					{
+						"name": "Пицца большая с курицй и грибами",
+						"price": "250",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/big-classik-pizza.webp"
+					},
+					{
+						"name": "Пицца большая с колбасой и грибами",
+						"price": "250",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/big-classik-pizza.webp"
+					},
+					{
+						"name": "Пицца с курицей и грибами",
+						"price": "120",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/big-classik-pizza.webp"
+					},
+					{
+						"name": "Пицца с колбасой и грибами",
+						"price": "120",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/big-classik-pizza.webp"
+					},
+					{
+						"name": "Курица по-польски",
+						"price": "115",
+						"text": "Куриное филе, сыр и помидоры",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/big-classik-pizza.webp"
+					},
+				],
+			},
+			{
+				"name": "Хычины",
+				"items": [
+					{
+						"name": "Хычин с мясом",
+						"price": "80",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/meathichin.webp"
+					},
+					{
+						"name": "Хычин с творогом и сыром",
+						"price": "80",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/tvorogcheese.webp"
+					}
+				],
+			},
+			{
+				"name": "Хлебы",
+				"items": [
+					{
+						"name": "Хлеб Пшеничный",
+						"price": "28",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/whitebread.webp"
+					},
+					{
+						"name": "Хлеб Чесночный",
+						"price": "35",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/chesnochnii.webp"
+					},
+					{
+						"name": "Хлеб Льняной",
+						"price": "38",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/lnianoy.webp"
+					},
+					{
+						"name": "Багет особый",
+						"price": "30",
+						"text": "",
+						"imgPath": "https://halaleda.ru/uchkeken/gorskipekar/img/baget-special.webp"
+					},
+				],
+			}
+		],
 
-function getChildIndex(node) {
-  return Array.prototype.indexOf.call(node.parentNode.childNodes, node);
-}
-
-function getDataFromParent(parent) {
-	let categoryParent = parent.parentElement.parentElement
-	let key = categoryParent.id + getChildIndex(parent)
-	return {
-		name: parent.querySelector(".t1").textContent,
-		price: Number(parent.querySelector(".t3").textContent.replace(/[^0-9]/g,"")),
-		text: parent.querySelector(".t2").textContent,
-		key
-	}
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-	busket.updateView()
-	updateBusketTwo()
-	document.querySelectorAll(".items-list .btn").forEach(btn => {
-		btn.addEventListener("click", e => {
-			e.preventDefault()
-			const parent = 	btn.parentElement.parentElement
-			const { name, price, text, key } = getDataFromParent(parent)
-			if (!busket.get(key)) {
-				busket.firstAdd(key, {
-					name,
-					price,
-					text,
-					count: 0,
+		activeCategory: 0,
+		currentProduct: null,
+		currentProductKey: null,
+		currentOption: null,
+		showModal: false,
+		showImg: null,
+		busket:  new Busket(),
+		activeCityDOMLink: null
+	},
+	computed: {
+		productHasOptions() {
+			return this.currentProduct?.options
+		},
+		productPrice() {
+			const product = this.currentProduct
+			let price = product.price
+			if(this.currentOption !==null && product?.options?.items) {
+				const option = product.options.items[this.currentOption]
+				if(option) {
+					price = option?.price
+				}				
+			}
+			return price
+		}
+	},
+	methods: {
+		busketMinus(key) {
+			this.busket.delete(key)
+			this.$forceUpdate()
+			updateBusketTwo()
+		},
+		busketPlus(key) {
+			this.busket.add(key)
+			this.$forceUpdate()
+			updateBusketTwo()
+		},
+		addProduct(product, key) {
+			this.currentProduct = product
+			this.currentProductKey = key
+			if(this.productHasOptions) return this.showModal = true
+			if (this.busket.get(key)) {
+				this.busket.add(key)
+			} else {
+				this.busket.firstAdd(key, {
+					name: product.name,
+					count: 1,
+					price: product.price
 				})
 			}
-			busket.add(key)
-		})
-	})
+			this.$forceUpdate()
+		},
+		addToOrder() {
+			const item = this.busket.get(this.currentProductKey)
+			const product = this.currentProduct
+			if(this.currentOption !==null && product?.options?.items) {
+				const option = product.options.items[this.currentOption]
+				if(option) {
+					item.name += ` (${option?.title})`
+					item.price = option?.price
+					this.busket.saveToLs()
+				}				
+			}
+			this.showModal = false
 
-	document.querySelectorAll(".items-list .plus").forEach(plus => {
-		plus.addEventListener("click", e => {
-			e.preventDefault()
-			const parent = 	plus.parentElement.parentElement.parentElement
-			const { key } = getDataFromParent(parent)
-			busket.add(key)
-		})
-	})
+		},
+	},
+	mounted() {
+		document.addEventListener('scroll', () => {
 
-	document.querySelectorAll(".items-list .minus").forEach(minus => {
-		minus.addEventListener("click", e => {
-			e.preventDefault()
-			const parent = 	minus.parentElement.parentElement.parentElement
-			const { key } = getDataFromParent(parent)
-			busket.delete(key)
 		})
-	})
+	},
+})
 
-	document.querySelectorAll(".basket-list .plus").forEach(plus => {
-		plus.addEventListener("click", e => {
-			e.preventDefault()
-			const parent = 	plus.parentElement.parentElement.parentElement
-			busket.add(parent.dataset.key)
-			const { price, count } = busket.get(parent.dataset.key)
-			parent.querySelector(".price").innerHTML = price * count + " P"
+document.addEventListener('DOMContentLoaded', () => {
+	const selectEl = document.querySelector(".select")
+	if(selectEl) {
+		selectEl.addEventListener("change", () => {
+			console.log("select")
 			updateBusketTwo()
 		})
-	})
-
-	document.querySelectorAll(".basket-list .minus").forEach(minus => {
-		minus.addEventListener("click", e => {
-			e.preventDefault()
-			const parent = 	minus.parentElement.parentElement.parentElement
-			busket.delete(parent.dataset.key)
-			const { price, count } = busket.get(parent.dataset.key)
-			parent.querySelector(".price").innerHTML = price * count + " P"
-			updateBusketTwo()
-		})
-	})
+	}
 	const sendEl = document.querySelector(".send")
 	if(sendEl) {
 		sendEl.addEventListener("submit", e => {
 			e.preventDefault()
 			if(checkDelyveryPrice()){
 				const phone = "+79380312109"
-				let text = busket.toString({
+				let text = vue.busket.toString({
 					city: document.querySelector("select")?.value,
 					street: document.querySelector(".street")?.value
 				})
@@ -733,14 +363,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		})
 	}
-
-	const selectEl = document.querySelector(".select")
-	if(selectEl) {
-		selectEl.addEventListener("change", () => {
-			console.log("select")
-			updateBusketTwo()
-		})
-	}
 })
 
 function updateBusketTwo() {
@@ -748,14 +370,14 @@ function updateBusketTwo() {
 	if (!document.querySelector(".res")) return
 	let deliveryPrice = getDelyveryPrice()
 	if (deliveryPrice === undefined) return
-	document.querySelector(".res").innerHTML = busket.getAllSum() + " P"
+	document.querySelector(".res").innerHTML = vue.busket.getAllSum() + " P"
 	if (!deliveryPrice) {
 		document.querySelector(".res3").innerHTML = "-"
 		// document.querySelector(".res2").innerHTML = "-"
 		// return
 	}
 	document.querySelector(".res3").innerHTML = deliveryPrice + " P"
-	document.querySelector(".res2").innerHTML = busket.getAllSum() + deliveryPrice + " P"
+	document.querySelector(".res2").innerHTML = vue.busket.getAllSum() + deliveryPrice + " P"
 	
 }
 
@@ -763,7 +385,7 @@ function getDelyveryPrice() {
 	const data = document.querySelector("select")?.selectedOptions[0]?.dataset || {}
 	let deliveryPrice = data.price
 	const freePrice = data.freePrice
-	const price = busket.getAllSum()
+	const price = vue.busket.getAllSum()
 	if(freePrice && price >= freePrice) {
 		deliveryPrice = 0	
 	}
@@ -775,7 +397,7 @@ function checkDelyveryPrice(selectEl) {
 	if(!selectEl) { return }
 	const data = selectEl?.selectedOptions[0]?.dataset || {}
 	const fromPrice = data.fromPrice
-	const price = busket.getAllSum()
+	const price = vue.busket.getAllSum()
 	const mesEl = selectEl?.parentElement.querySelector('.form-error')	
 	if(price < fromPrice) {
 		mesEl.innerHTML = `Доставка в данный населенный пункт от: ${fromPrice} рублей`
@@ -786,3 +408,53 @@ function checkDelyveryPrice(selectEl) {
 		return true
 	}
 }
+
+jQuery(document).ready(function($){
+	$(window).on('scroll', function(){
+		var sc = $(this).scrollTop();
+		if(sc > $('.nav-spacer').offset().top){
+			$('.nav').addClass('fixed')
+		}else{
+			$('.nav').removeClass('fixed')
+		}
+	})
+
+	//mnu
+	var menu_selector = ".nav"; 
+	function onScroll(){
+	    var scroll_top = $(document).scrollTop();
+	    $(menu_selector + " a").each(function(){
+	        var hash = $(this).attr("href");
+	        var target = $(hash);
+	        if (target.position().top - 20 <= scroll_top && target.position().top - 20 + target.outerHeight() > scroll_top) {
+	            $(menu_selector + " a.active").removeClass("active");
+	            $(this).addClass("active");
+	        } else {
+	            $(this).removeClass("active");
+	        }
+	    });
+	}
+	 
+	$('.offer-card__button').on('click', function(e){
+		e.preventDefault()
+	})
+
+	$(document).on("scroll", onScroll);
+	 
+	$(".nav a[href^=#]").click(function(e){
+	        e.preventDefault();
+	 
+	        $(document).off("scroll");
+	        $(menu_selector + " a.active").removeClass("active");
+	        $(this).addClass("active");
+	        var hash = $(this).attr("href");
+	        var target = $(hash);
+	 
+	        $("html, body").animate({
+	            scrollTop: target.offset().top
+	        }, 500, function(){
+	            window.location.hash = hash;
+	            $(document).on("scroll", onScroll);
+	        });
+	});
+});

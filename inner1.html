@@ -8,12 +8,20 @@
 	<meta name="MobileOptimized" content="430" />
 	<link rel="stylesheet" href="css/css.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+	<link rel="stylesheet" href="https://halaleda.ru/sharedFiles/css/style.css">
+	<link rel="stylesheet" href="css/theme.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
 	<div id="wrapper">
 		<div class="center-wrap">
 			<div class="main-wrapper">
-				<a href="./" class="back"><img src="img/back.svg" alt=""><span>Корзина</span></a>
+				<a href="./" class="back">
+					<svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<line x1="1.99099" y1="11.9804" x2="13.0901" y2="1.89033" stroke="#3478F6" stroke-width="3"/>
+						<line x1="2.06066" y1="10.0297" x2="12.6673" y2="20.6363" stroke="#3478F6" stroke-width="3"/>
+					</svg>
+				</a>
 				<div class="logo-bx logo-bx-inner">
 					<div class="logo"><img src="img/logo.png" width="50" alt=""></div>
 					<div class="tt">
@@ -25,7 +33,21 @@
 				<form action="#" class="send">
 					<div class="basket-bx">
 						<div class="bx">
-							<ul class="basket-list">
+							<ul class="basket-list" v-if="busket.items">
+								<li
+									v-for="(key, i) in Object.keys(busket.items)"
+									:data-key="key"
+								>
+									<div class="name">{{ busket.items[key].name }}</div>
+									<div class="right">
+										<div class="number-bx">
+											<span class="minus" @click="busketMinus(key)">-</span>
+											<input type="text" :value="busket.items[key].count" disabled size="5">
+											<span class="plus" @click="busketPlus(key)">+</span>
+										</div>
+									<div class="price">{{ busket.items[key].count * busket.items[key].price }} P</div>
+									</div>
+								</li>
 							</ul>
 							<div class="sep"></div>
 							<input type="text" placeholder="Комментарий" class="comment">
@@ -53,7 +75,7 @@
 							<ul class="basket-list">
 								<li>
 									<div class="name">Итого в корзине</div>
-									<div class="price res">189 P</div> 
+									<div class="price res">{{ busket.getAllSum() }}</div> 
 								</li>
 								<li>
 									<div class="name">Стоимость доставки</div>
